@@ -14,6 +14,10 @@ import screen.ScoreScreen;
 import screen.Screen;
 import screen.TitleScreen;
 
+
+/*
+Test 해보기
+*/
 /**
  * Implements core game logic.
  * 
@@ -124,8 +128,8 @@ public final class Core {
 			switch (returnCode) {
 			case 1:
 				// Main menu.
-				mainBgm = new Sound("./music/TheStarFestival.wav");
-				mainBgm.playSoundLoop();
+				mainBgm = new Sound("./music/TheStarFestival.wavt");
+				mainBgm.playSoundLoop(1);
 				currentScreen = new TitleScreen(width, height, FPS);
 				LOGGER.info("Starting " + WIDTH + "x" + HEIGHT
 						+ " title screen at " + FPS + " fps.");
@@ -138,7 +142,7 @@ public final class Core {
 				do {
 					// One extra live every few levels.
 					bgm = new Sound(gameSettings.get(gameState.getLevel()-1).getWavPath());
-					bgm.playSoundLoop();
+					bgm.playSoundLoop(1);
 					boolean bonusLife = gameState.getLevel()
 							% EXTRA_LIFE_FRECUENCY == 0
 							&& gameState.getLivesRemaining() < MAX_LIVES;

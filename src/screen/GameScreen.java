@@ -168,7 +168,7 @@ public class GameScreen extends Screen {
 				}
 				if (inputManager.isKeyDown(KeyEvent.VK_SPACE)) {
 					if (this.ship.shoot(this.bullets)) {
-						shootSound.playOnce();
+						shootSound.playSoundLoop(0);
 						this.bulletsShot++;
 					}
 				}
